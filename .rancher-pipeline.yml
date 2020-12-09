@@ -1,0 +1,17 @@
+stages:
+- name: Deploy app-db-test1
+    steps:
+    - applyAppConfig:
+        catalogTemplate: cattle-global-data:iii-dev-charts3-db
+        version: 0.1.0
+        name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-test1
+        targetNamespace: p-v2nzs-pipeline
+        answers:
+          git.repoName: ${CICD_GIT_REPO_NAME}
+          git.branch: ${CICD_GIT_BRANCH}
+          git.url: ${CICD_GIT_URL}
+          db.type: mysql
+          # 使用者資料庫管理密碼
+          db.rootpassword: bearisbear
+          # 使用者初始想要建立的資料庫名稱
+          db.name: health
