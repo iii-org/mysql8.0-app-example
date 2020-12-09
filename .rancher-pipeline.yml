@@ -9,7 +9,6 @@ stages:
         answers:
           git.repoName: ${CICD_GIT_REPO_NAME}
           git.branch: ${CICD_GIT_BRANCH}
-          git.url: ${CICD_GIT_URL}
           db.type: mysql
           # 使用者資料庫管理密碼
           db.rootpassword: bearisbear
