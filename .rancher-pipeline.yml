@@ -1,6 +1,6 @@
 stages:
 - name: Deploy app-db-test1
-    steps:
+  steps:
     - applyAppConfig:
         catalogTemplate: cattle-global-data:iii-dev-charts3-db
         version: 0.1.0
