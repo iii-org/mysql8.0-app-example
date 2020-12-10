@@ -1,4 +1,5 @@
 stages:
+# 單一專案多個資料庫部屬(1/3)
 - name: Deploy app-db-test1
   steps:
     - applyAppConfig:
@@ -19,6 +20,7 @@ stages:
           # 使用者初始想要建立的資料庫名稱
           db.name: health
 
+# 單一專案多個資料庫部屬(2/3)
 - name: Deploy app-db-test2
   steps:
     - applyAppConfig:
@@ -38,3 +40,68 @@ stages:
           db.password: bearisbear22
           # 使用者初始想要建立的資料庫名稱
           db.name: health11
+
+# 單一專案多個資料庫部屬(3/3)
+- name: Deploy app-db-test3
+  steps:
+    - applyAppConfig:
+        catalogTemplate: cattle-global-data:iii-dev-charts3-db
+        version: 0.1.0
+        name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-test3
+        targetNamespace: p-v2nzs-pipeline
+        answers:
+          # 這裡是為了50與140環境測試
+          git.host: "10.50.1.53"
+          # 這裡是為了告訴要處理的git來源為何
+          git.repoName: ${CICD_GIT_REPO_NAME}
+          git.branch: ${CICD_GIT_BRANCH}
+          db.type: mysql
+          # 使用者資料庫管理密碼
+          db.username: bear33
+          db.password: bearisbear33
+          # 使用者初始想要建立的資料庫名稱
+          db.name: health33
+
+# mysql:5.7
+- name: Deploy app-db-test4
+  steps:
+    - applyAppConfig:
+        catalogTemplate: cattle-global-data:iii-dev-charts3-db
+        version: 0.1.0
+        name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-test4
+        targetNamespace: p-v2nzs-pipeline
+        answers:
+          # 這裡是為了50與140環境測試
+          git.host: "10.50.1.53"
+          # 這裡是為了告訴要處理的git來源為何
+          git.repoName: ${CICD_GIT_REPO_NAME}
+          git.branch: ${CICD_GIT_BRANCH}
+          db.type: mysql
+          db.tag: 5.7
+          # 使用者資料庫管理密碼
+          db.username: bear44
+          db.password: bearisbear44
+          # 使用者初始想要建立的資料庫名稱
+          db.name: health44
+
+# mysql:8.0
+- name: Deploy app-db-test5
+  steps:
+    - applyAppConfig:
+        catalogTemplate: cattle-global-data:iii-dev-charts3-db
+        version: 0.1.0
+        name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-test5
+        targetNamespace: p-v2nzs-pipeline
+        answers:
+          # 這裡是為了50與140環境測試
+          git.host: "10.50.1.53"
+          # 這裡是為了告訴要處理的git來源為何
+          git.repoName: ${CICD_GIT_REPO_NAME}
+          git.branch: ${CICD_GIT_BRANCH}
+          db.type: mysql
+          db.tag: 8.0
+          # 使用者資料庫管理密碼
+          db.username: bear55
+          db.password: bearisbear55
+          # 使用者初始想要建立的資料庫名稱
+          db.name: health55
