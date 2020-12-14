@@ -18,7 +18,7 @@ stages:
           db.gui: true
           # 使用者參數(資料庫)
           db.type: mysql
-          db.tag: 5.7
+          db.tag: 8.0
           # 使用者參數(資料庫)帳號密碼
           db.username: bear44
           db.password: bearisbear44
