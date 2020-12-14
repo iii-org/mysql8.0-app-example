@@ -15,7 +15,7 @@ stages:
           git.branch: ${CICD_GIT_BRANCH}
           db.type: mysql
           # 使用者資料庫管理密碼
-          db.username: bear
-          db.password: bearisbear
+          db.username: bear33
+          db.password: bearisbear33
           # 使用者初始想要建立的資料庫名稱
-          db.name: health
+          db.name: health33
